@@ -1,0 +1,56 @@
+<div class='panel panel-primary'>
+      	<div class='panel panel-heading'>
+         <h1>Edit Service: <span id='sid'></span></h1>
+        </div>
+        <div class='panel panel-body'>
+        <table class='table table-responsive'>
+            <tr>
+              <th scope="row">Service Name:</th>
+              <td><input type='text' id='servicename' class='form-control'/></td>
+            </tr>
+            <tr>
+              <th scope="row">Service Type:</th>
+              <td>
+                 <select id='servicetype' class='form-control'>
+                    <option value='Out-Patient'>Out-Patient</option>
+                    <option value='Checkup'>Checkup</option>
+                    <option value='Surgery'>Surgery</option>
+                    <option value='Permit'>Permit</option>
+              	 </select>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">Price:</th>
+              <td><input type='number' id='price' class='form-control'/></td>
+            </tr>
+          </table>
+        </div>
+        <div class='panel panel-footer'>
+         <button class='btn btn-primary' onclick="update_service()">Update</button>
+         <button class='btn btn-warning' data-toggle="modal" data-target="#deleteModal">Delete</button>
+        
+        </div>
+      </div>
+      
+<!-- Delete Modal -->
+<div id="deleteModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Confirmation</h4>
+      </div>
+      <div class="modal-body">
+        <h3>Banar mau delete kah?</h3>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" 
+        onClick="del_service()">Confirm</button>
+         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+
+  </div>
+</div>

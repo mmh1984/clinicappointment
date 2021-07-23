@@ -1,0 +1,71 @@
+<div class='panel panel-primary'>
+      	<div class='panel panel-heading'>
+         <h1>Book an appointment</h1>
+        </div>
+        <div class='panel panel-body'>
+        <table class='table table-responsive'>
+            <tr>
+              <th scope="row">Date:</th>
+              <td><input type='text' id='appdate' class='form-control'  data-date-format="dd-mm-yyyy" readonly="readonly"/>
+              <br/> (Appointments must be at least 3 days from today's date)</td>
+            </tr>
+            <tr>
+              <th scope="row">Branch:</th>
+              <td>
+                 <select id='branch' class='form-control'>
+                    <option value='Lambak Kanan'>Lambak Kanan</option>
+                    <option value='Rimba'>Rimba</option>
+                    <option value='Seria'>Seria</option>
+                    <option value='Gadong'>Gadong</option>
+              	 </select>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">Time:</th>
+              <td>
+              <select id='apptime' class='form-control'>
+              	<option value='8'>8:00</option>
+                <option value='9'>9:00</option>
+                <option value='10'>10:00</option>
+                <option value='11'>11:00</option>
+                <option value='13'>1:00</option>
+                <option value='14'>2:00</option>
+                <option value='15'>3:00</option>
+                <option value='16'>4:00</option>
+                <option value='17'>5:00</option>
+               
+              </select>
+              </td>
+            </tr>
+            
+             <tr>
+              <th scope="row">Description:</th>
+              <td><textarea id='description' class='form-control'/></td></td>
+            </tr>
+          </table>
+        </div>
+        <div class='panel panel-footer'>
+         <button class='btn btn-primary' onclick="save_appointment()">Save</button>
+        
+        
+        </div>
+      </div>
+      
+
+
+<script>
+ $('#appdate').datetimepicker({
+        language: 'fr',
+        weekStart: 1,
+        todayBtn: 1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 2,
+        minView: 2,
+        forceParse: 0
+    });
+	
+
+
+
+</script>

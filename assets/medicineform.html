@@ -1,0 +1,119 @@
+<div class='panel panel-primary'>
+      	<div class='panel panel-heading'>
+         <h1>Edit Medicine: <span id='mid'></span></h1>
+        </div>
+        <div class='panel panel-body'>
+        <table class='table table-responsive'>
+            <tr>
+              <th scope="row">Medicine Name:</th>
+              <td><input type='text' id='medicinename' class='form-control'/></td>
+            </tr>
+           
+           <tr>
+              <th scope="row">Usage:</th>
+              <td><input type='text' id='usage' class='form-control'/></td>
+            </tr>
+            
+             <tr>
+              <th scope="row">Dosage:</th>
+              <td><input type='text' id='dosage' class='form-control'/></td>
+            </tr>
+            
+             <tr>
+              <th scope="row">Description:</th>
+              <td><input type='text' id='description' class='form-control'/></td>
+            </tr>
+            
+             <tr>
+              <th scope="row">Details:</th>
+              <td><input type='text' id='details' class='form-control'/></td>
+            </tr>
+          </table>
+        </div>
+        <div class='panel panel-footer'>
+         <button class='btn btn-primary' onClick="update_medicine()" >Update</button>
+         <button class='btn btn-warning'  data-toggle='modal' data-target='#deleteModal'>Delete</button>
+        
+        </div>
+      </div>
+
+<div id="deleteModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Confirmation</h4>
+      </div>
+      <div class="modal-body">
+        <h3>Banar mau delete kah?</h3>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" 
+        onClick="del_medicine()">Confirm</button>
+         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<script>
+function update_medicine(){
+if($("#medicinename").val()==''){//username
+			$("#medicinename").after("<span class='text-warning'>Enter medicine name</span>");
+		}
+		else if($("#usage").val()==''){//password
+			$("#usage").after("<span class='text-warning'>Usage is required</span>");
+		}
+		else if($("#dosage").val()==''){//password
+			$("#dosage").after("<span class='text-warning'>Dosage is required</span>");
+		}
+		else if($("#description").val()==''){//password
+			$("#description").after("<span class='text-warning'>Description is required</span>");
+		}
+		else if($("#details").val()==''){//password
+			$("#details").after("<span class='text-warning'>Details is required</span>");
+		}
+		else{
+			clear_span();
+			update_medicine();
+		}	
+	
+}
+
+function clear_span(){
+  $("#medicinename").next("span").remove();
+  $("#usage").next("span").remove();
+  $("#dosage").next("span").remove();
+  $("#description").next("span").remove();
+  $("#details").next("span").remove();
+}
+
+function update_medicine(){
+	//put all contents to array
+	var contents=[]; //array
+	contents.push($("#medicinename").val()); //index 0
+	contents.push($("#usage").val()); //index 1
+	contents.push($("#dosage").val()); //index 2
+	contents.push($("#description").val()); //index 1
+	contents.push($("#details").val()); //index 2
+	$.ajax({
+		type:"POST",
+		url:"phpfunctions/medicines.php",
+		data:{
+			operation:"updatemedicine",
+			data:contents,
+			mid:$("#mid").html()
+		},
+		success:function(msg){
+			alert(msg);	
+			load_medicine();
+		}	
+		
+	});
+	
+}
+
+
+</script>

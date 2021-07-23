@@ -1,0 +1,96 @@
+<div class='panel panel-primary'>
+      	<div class='panel panel-heading'>
+         <h1>Edit Doctor: <span id='did'></span></h1>
+        </div>
+        <div class='panel panel-body'>
+        <div class='well center-block' style='text-align:center;width:300px'>
+        <!--add this file for file upload and preview-->
+          <img src='images/avatar.png' id='avatar' class='img-responsive 
+
+center-block'>
+            <input type="file" name="fileToUpload" id="filetoupload" 
+
+onChange="show_image(this,'doctors')" accept="image/*" >
+           
+   <!--end of file upload avatar-->
+        </div>
+        <table class='table table-responsive'>
+            <tr>
+              <th scope="row">Doctor Name:</th>
+              <td><input type='text' id='doctorname' class='form-control'/></td>
+            </tr>
+            <tr>
+              <th scope="row">Specialty:</th>
+              <td>
+                 <select id='specialty' class='form-control'>
+                    <option value='Dental'>Dental</option>
+                    <option value='Orthopedic'>Orthopedic</option>
+                    <option value='General Medicine'>General Medicine</option>
+                    <option value='Pediatric'>Pediatric</option>
+              	 </select>
+              </td>
+            </tr>
+             <tr>
+              <th scope="row">Gender:</th>
+              <td>
+                 <select id='gender' class='form-control'>
+                    <option value='Male'>Male</option>
+                    <option value='Female'>Female</option>
+                  
+              	 </select>
+              </td>
+            </tr>
+            <th scope="row">Religion:</th>
+              <td>
+                 <select id='religion' class='form-control'>
+                    <option value='Islam'>Islam</option>
+                    <option value='Catholic'>Catholic</option>
+                    <option value='Buddhism'>Buddhism</option>
+                    <option value='Others'>Others</option>
+              	 </select>
+              </td>
+            </tr>
+            
+             <th scope="row">Nationality:</th>
+              <td>
+                 <select id='nationality' class='form-control'>
+                    <option value='Malaysia'>Malaysia</option>
+                    <option value='Brunei'>Brunei</option>
+                    <option value='Philippine'>Philippine</option>
+                    <option value='China'>China</option>
+                     <option value='Thailand'>Thailand</option>
+                    <option value='Others'>Others</option>
+              	 </select>
+              </td>
+            </tr>
+           
+          </table>
+        </div>
+        <div class='panel panel-footer'>
+         <button class='btn btn-primary' id='Update' onClick="update_doctor()">Update</button>
+         <button class='btn btn-warning' id='Delete' data-toggle='modal' data-target='#deleteModal'>Delete</button>
+        
+        </div>
+      </div>
+    <!--modal for delete-->  
+      <div id="deleteModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Confirmation</h4>
+      </div>
+      <div class="modal-body">
+        <h3>Banar mau delete kah?</h3>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" 
+        onClick="del_doctor()">Confirm</button>
+         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+
+  </div>
+</div>

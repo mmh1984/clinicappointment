@@ -1,0 +1,210 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+font-family:"Lato",sans-serif;	
+margin:0;
+padding:0;
+background-color:#003;
+}
+
+html {
+height:100%;	
+}
+
+section{
+height:100%;
+padding:10px;
+
+}
+
+div,p,ul,table,li,h1,h2,h3,h4,h5{
+margin:0;
+padding:0;	
+}
+
+section #logindiv {
+margin:10% auto;
+padding:0;
+
+width:30%;	
+
+
+}
+
+section #accountdiv {
+margin:0 auto;
+padding:0;
+width:80%;	
+
+
+}
+
+section #searchdiv {
+margin:0 auto;
+padding:0;
+width:80%;
+	
+
+
+}
+
+#chequeselected{
+	display:none;
+}
+
+.inputshort {
+width:200px;	
+
+padding:2px;
+border-radius:2px;
+border:1px inset #999;
+
+}
+
+.inputmedium {
+width:300px;	
+
+padding:2px;
+border-radius:2px;
+border:1px inset #999;
+}
+
+.inputlarge {
+width:350px;	
+
+padding:2px;
+border-radius:2px;
+border:1px inset #999;
+}
+
+.btnprimarydark {
+background-color:#036;
+	
+}
+.message,.logout{
+ position: absolute; 
+  left: 0; 
+  right: 0; 
+  top:45%;
+  margin-left: auto; 
+  margin-right: auto; 
+width:400px;
+height:200px;
+background-color:#FFF;
+text-align:center;
+z-index:100;
+box-shadow:5px 5px 5px #aeaeae;
+display:none;
+}
+
+.mainmodal,.mainmodal1{
+ position: absolute; 
+  left: 0; 
+  right: 0; 
+  top:15%;
+  margin-left: auto; 
+  margin-right: auto; 
+width:400px;
+
+background-color:#FFF;
+text-align:center;
+z-index:100;
+box-shadow:5px 5px 5px #aeaeae;
+display:none;
+}
+
+
+
+.searchmodal{
+width:100%;
+height:100%;
+display:none;
+background:rgba(51,51,51,.5);
+position:absolute;
+top:0;
+z-index:200;	
+	
+}
+
+.detailsmodal,.detailsmodal1{
+width:70%;
+display:none;
+position:absolute;
+top:200px;
+margin-right: auto;
+margin-left: auto;
+z-index:300;
+
+	
+}
+.detailsmodal .detailscontent,.detailsmodal1 .detailscontent {
+box-shadow:5px 5px 5px rgba(0,0,0,.6);	
+}
+.searchmessage{
+ 
+ margin:0 auto;
+width:250px;
+height:200px;
+background-color:#FFF;
+text-align:center;
+
+
+}
+
+#orresult,#bankresult{
+height:800px;
+overflow-y:auto;
+font-size:11px;	
+}
+
+#loader img,#loader1 img,#detailsloader img,#detailsloader1 img{
+width:30px;
+height:30px;
+display:block;
+margin:0 auto;	
+display:none;
+}
+#allrecords {
+display:none;	
+}
+
+#editdetails,#editdetails1 {
+text-decoration:none;
+color:#fff;	
+}
+
+#msg{
+text-align:center;	
+}
+
+#msg img {
+width:30px;
+height:30px;	
+display:block;
+margin:0 auto;
+}
+
+.logininfo{
+
+
+}
+
+.navbar {
+background:#000;	
+}
+.menuicon{
+width:30px;
+height:30px;	
+}
+
+/*create a rule to change arror to icon
+this rule targets li of id #usermenu */
+#usermenu li:hover{
+  cursor:pointer; 
+  background-color:#36F;
+  	
+}
+#usermenu li img{
+	width:30px;
+}
